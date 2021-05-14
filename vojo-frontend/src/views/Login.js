@@ -137,6 +137,10 @@ class Login extends Component {
   loginSet = async (data) => {
     const response = await fetch(`${process.env.REACT_APP_API}/v3/auth/login`, {
       method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(data),
     });
 
